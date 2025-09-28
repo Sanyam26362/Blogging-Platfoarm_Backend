@@ -56,7 +56,7 @@ exports.getPostById = async (req, res, next) => {
 exports.updatePost = async(req,res,next) => {
     try{
         const updates = req.body;
-        const post = await Post.ndByIdAndUpdate(req.params.id,updates, {
+        const post = await Post.findByIdAndUpdate(req.params.id,updates, {
             new: true,
             runValidators: true
         });
